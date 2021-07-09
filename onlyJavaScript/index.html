@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>My Language Library</h1>
+        <div class="form">
+            <form action="" method="">
+                <h4>Add a new word...</h4>
+                <label for="words">words</label>
+                <input type="text" name="words" id="words">
+
+                <label for="synonyms">Means</label>
+                <input type="text" name="synonyms" id="synonyms">
+
+                <label class="read" for="learned">learned? in step1</label>
+                <input type="checkbox" name="learned" id="learned" class="read">
+
+                <input id="addWord" type="button" onclick="addWordToLibrary()" value="Add Word">
+
+            </form>
+        </div>
+
+        <div id="output">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>words</th>
+                        <th>Means</th>
+                        <th>inStart</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody id="tableoutput">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="js/scripts.js" type="text/javascript"></script>
+</body>
+
+</html>

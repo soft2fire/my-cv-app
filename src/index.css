@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* @import "../node_modules/tailwindcss/base.css"; */
+/* @import "../node_modules/tailwindcss/base"; */
+@import "tailwindcss";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/components";
+
+/* @import "../node_modules/tailwindcss/components.css"; */
+/* @import "../node_modules/tailwindcss/components"; */
+
+/* @import "../node_modules/tailwindcss/utilities.css"; */
+/* @import "../node_modules/tailwindcss/utilities"; */
+
