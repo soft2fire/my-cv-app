@@ -1,6 +1,8 @@
 import { useState } from "react";
 import TextSection from './TextSection'
+
 const GeneralSection = () => {
+
     const [personalInfo, setPersonalInfo] = useState({
         firstName: '',
         lastName: '',
@@ -9,19 +11,21 @@ const GeneralSection = () => {
     });
 
     const [editMode, setEditMode] = useState(true)
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        setEditMode((prevMode) => !prevMode)
+        setEditMode((prevMode) => !prevMode);
     }
 
     const handleChange = (event) => {
-        const { name, value } = event.target;
+        const { value, name } = event.target;
         setPersonalInfo((prevInfo) => {
             return { ...prevInfo, [name]: value }
         });
     }
 
     const { firstName, lastName, email, phone } = personalInfo;
+
     if (!editMode) {
         return (
             <TextSection
@@ -30,16 +34,15 @@ const GeneralSection = () => {
                 email={email}
                 phone={phone}
                 handleEdit={handleSubmit}
-                className="p-0 m-0"
             />
         );
     } else {
         return (
-            <div className='p-0 m-0'>
+            <div className=''>
                 <section>
                     <form className='section' action='' onSubmit={handleSubmit}>
-                        <label className="bg-gray-600 rounded-xl pl-2 text-center">
-                            <p className="text-white font-bold pt-2 float-left">First Name:</p>
+                        <label className="bg-gray-600 rounded-xl text-center">
+                            <p className="text-white font-bold pt-2 pl-2 float-left">First Name:</p>
                             <input
                                 className="p-2 rounded"
                                 type='text'
@@ -50,9 +53,8 @@ const GeneralSection = () => {
                                 required
                             />
                         </label>
-
-                        <label className="bg-gray-600 rounded-xl pl-2 text-center">
-                            <p className="text-white font-bold pt-2 float-left">Last Name:</p>
+                        <label className="bg-gray-600 rounded-xl text-center">
+                            <p className="text-white font-bold pt-2 pl-2 float-left">Last Name:</p>
                             <input
                                 className="p-2 rounded"
                                 type='text'
@@ -63,9 +65,8 @@ const GeneralSection = () => {
                                 required
                             />
                         </label>
-
-                        <label className="bg-gray-600 rounded-xl pl-2 text-center">
-                            <p className="text-white font-bold pt-2 float-left">Email:</p>
+                        <label className="bg-gray-600 rounded-xl text-center">
+                            <p className="text-white font-bold pt-2 pl-2 float-left">Email:</p>
                             <input
                                 className="p-2 rounded"
                                 type='email'
@@ -76,8 +77,8 @@ const GeneralSection = () => {
                                 required
                             />
                         </label>
-                        <label className="bg-gray-600 rounded-xl pl-2 text-center">
-                            <p className="text-white font-bold pt-2 float-left">Phone Number:</p>
+                        <label className="bg-gray-600 rounded-xl text-center">
+                            <p className="text-white font-bold pt-2 pl-2 float-left">Phone Number:</p>
                             <input
                                 className="p-2 rounded"
                                 type='tel'
@@ -94,7 +95,7 @@ const GeneralSection = () => {
                     </form>
                 </section>
             </div>
-        )
+        );
     }
 }
 export default GeneralSection;
